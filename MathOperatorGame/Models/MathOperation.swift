@@ -1,6 +1,6 @@
 struct MathOperation {
     let firstNumber: Int
     let secondNumber: Int
-    let operationSymbol: String
+    let operationType: OperationType
     let correctAnswer: Int
 }
