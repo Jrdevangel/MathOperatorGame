@@ -2,16 +2,24 @@
 
 MathOperatorGame is an educational mobile game designed to help children improve their arithmetic skills through fun and interactive gameplay.
 
+## Project Structure
+
+```text
+MathOperatorGame/
+├── Models/
+│   ├── Player.swift
+│   ├── MathOperation.swift
+│   └── OperationType.swift
+├── ContentView.swift
+└── MathOperatorGameApp.swift
+```
+
 ## Features
 
 * Addition
 * Subtraction
 * Multiplication
 * Division
-* Multiple difficulty levels
-* Score tracking
-* Player progression
-* Statistics and achievements (planned)
 
 ## Technologies
 
@@ -30,6 +38,29 @@ MathOperatorGame is an educational mobile game designed to help children improve
 * Java
 * Spring Boot
 * PostgreSQL
+
+## Current Progress
+
+Implemented:
+
+* Player model
+* MathOperation model
+* OperationType enum
+* Automatic answer calculation logic
+
+In Progress:
+
+* Random math operation generation
+* Game flow implementation
+* SwiftUI user interface
+
+Planned:
+
+* Difficulty levels
+* Score tracking
+* Player progression
+* Statistics and achievements
+* Android version
 
 ## Project Status
 
