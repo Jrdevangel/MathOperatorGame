@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  MathOperatorGame
-//
-//  Created by Ángel Ponce Reguera on 24/06/2026.
-//
-
 import SwiftUI
 
 struct ContentView: View {
