@@ -6,15 +6,21 @@ MathOperatorGame is an educational mobile game designed to help children improve
 
 ```text
 MathOperatorGame/
-├── Models/
-│   ├── Player.swift
-│   ├── MathOperation.swift
-│   └── OperationType.swift
-├── ContentView.swift
-└── MathOperatorGameApp.swift
+├── README.md
+├── MathOperatorGame.xcodeproj
+└── MathOperatorGame/
+    ├── Models/
+    │   ├── Player.swift
+    │   ├── MathOperation.swift
+    │   ├── OperationType.swift
+    │   └── MathOperationFactory.swift
+    ├── ContentView.swift
+    └── MathOperatorGameApp.swift
 ```
 
 ## Features
+
+Core arithmetic operations planned for the first playable version:
 
 * Addition
 * Subtraction
@@ -35,6 +41,8 @@ MathOperatorGame/
 
 ### Backend (planned)
 
+Optional backend for online features:
+
 * Java
 * Spring Boot
 * PostgreSQL
@@ -47,12 +55,7 @@ Implemented:
 * MathOperation model
 * OperationType enum
 * Automatic answer calculation logic
-
-In Progress:
-
-* Random math operation generation
-* Game flow implementation
-* SwiftUI user interface
+* Initial random math operation generator
 
 Planned:
 
@@ -64,4 +67,4 @@ Planned:
 
 ## Project Status
 
-Currently in early development.
+Currently in early development with the core domain models and the first random operation generator implemented.
