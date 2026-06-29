@@ -55,7 +55,7 @@ Implemented:
 * MathOperation model
 * OperationType enum
 * Automatic answer calculation logic
-* Initial random math operation generator
+* Random math operation generation
 
 Planned:
 
@@ -67,4 +67,4 @@ Planned:
 
 ## Project Status
 
-Currently in early development with the core domain models and the first random operation generator implemented.
+Currently in early development with the core domain models and random math operation generation implemented.
