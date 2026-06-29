@@ -14,6 +14,8 @@ MathOperatorGame/
     │   ├── MathOperation.swift
     │   ├── OperationType.swift
     │   └── MathOperationFactory.swift
+    ├── Views/
+    │   └── WelcomeView.swift
     ├── ContentView.swift
     └── MathOperatorGameApp.swift
 ```
