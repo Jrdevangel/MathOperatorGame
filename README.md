@@ -16,7 +16,9 @@ MathOperatorGame/
     │   └── MathOperationFactory.swift
     ├── Views/
     │   ├── WelcomeView.swift
-    │   └── LearningAreasView.swift
+    │   ├── LearningAreasView.swift
+    │   └── Arithmetic/
+    │       └── ArithmeticView.swift
     ├── ContentView.swift
     └── MathOperatorGameApp.swift
 ```
@@ -57,6 +59,7 @@ Implemented:
 * Welcome screen
 * Navigation to learning areas
 * Learning areas screen
+* Arithmetic difficulty selection screen
 * Player model
 * MathOperation model
 * OperationType enum
@@ -73,4 +76,4 @@ Implemented:
 
 ## Project Status
 
-Currently in early development with the core domain models, random math operation generation, and the first SwiftUI screens implemented.
+Currently in early development with the core domain models, random math operation generation, and the initial navigation flow implemented.

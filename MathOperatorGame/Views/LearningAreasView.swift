@@ -13,7 +13,7 @@ struct LearningAreasView: View {
 
             Spacer()
 
-            NavigationLink(destination: Text("Arithmetic")) {
+            NavigationLink(destination: ArithmeticView()) {
                 LearningAreaRow(
                     title: "Arithmetic",
                     icon: "plus.forwardslash.minus"
