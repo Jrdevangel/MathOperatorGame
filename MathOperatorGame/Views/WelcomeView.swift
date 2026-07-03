@@ -32,7 +32,7 @@ struct WelcomeView: View {
 
                 Spacer()
 
-                NavigationLink(destination: Text("Next Screen Placeholder")) {
+                NavigationLink(destination: LearningAreasView()) {
                     Text("Start")
                         .font(.title2)
                         .fontWeight(.semibold)

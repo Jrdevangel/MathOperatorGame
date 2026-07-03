@@ -15,7 +15,8 @@ MathOperatorGame/
     │   ├── OperationType.swift
     │   └── MathOperationFactory.swift
     ├── Views/
-    │   └── WelcomeView.swift
+    │   ├── WelcomeView.swift
+    │   └── LearningAreasView.swift
     ├── ContentView.swift
     └── MathOperatorGameApp.swift
 ```
@@ -53,13 +54,16 @@ Optional backend for online features:
 
 Implemented:
 
+* Welcome screen
+* Navigation to learning areas
+* Learning areas screen
 * Player model
 * MathOperation model
 * OperationType enum
 * Automatic answer calculation logic
 * Random math operation generation
 
-Planned:
+## Planned:
 
 * Difficulty levels
 * Score tracking
@@ -69,4 +73,4 @@ Planned:
 
 ## Project Status
 
-Currently in early development with the core domain models and random math operation generation implemented.
+Currently in early development with the core domain models, random math operation generation, and the first SwiftUI screens implemented.
