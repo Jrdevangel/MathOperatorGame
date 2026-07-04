@@ -16,7 +16,7 @@ struct ArithmeticView: View {
 
             Spacer()
 
-            NavigationLink(destination: Text("Easy Mode")) {
+            NavigationLink(destination: GameView()) {
                 Text("Easy")
                     .frame(maxWidth: .infinity)
             }
