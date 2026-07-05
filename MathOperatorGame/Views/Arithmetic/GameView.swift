@@ -6,12 +6,13 @@ struct GameView: View {
     @State private var answer = ""
     @State private var feedback = ""
     @State private var isCorrect = false
-
+    @State private var questionNumber = 1
+    
     var body: some View {
 
         VStack(spacing: 30) {
 
-            Text("Question 1")
+            Text("Question \(questionNumber)")
                 .font(.largeTitle)
                 .fontWeight(.bold)
 
@@ -33,9 +34,16 @@ struct GameView: View {
                 }
                 
                 if userAnswer == operation.calculateAnswer() {
+                    
                     feedback = "✅ Correct!"
                     isCorrect = true
+                    
+                    questionNumber += 1
+                    operation = MathOperationFactory.generate()
+                    answer = ""
+                    
                 } else {
+                    
                     feedback = "❌ Incorrect. Try again!"
                     isCorrect = false
                 }
