@@ -7,6 +7,7 @@ struct GameView: View {
     @State private var feedback = ""
     @State private var isCorrect = false
     @State private var questionNumber = 1
+    @State private var score = 0
     
     var body: some View {
 
@@ -16,6 +17,10 @@ struct GameView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
 
+            Text("⭐ Score: \(score)")
+                .font(.title2)
+                .fontWeight(.semibold)
+            
             Text(
                 "\(operation.firstNumber) \(symbol) \(operation.secondNumber) = ?"
             )
@@ -38,6 +43,7 @@ struct GameView: View {
                     feedback = "✅ Correct!"
                     isCorrect = true
                     
+                    score += 1
                     questionNumber += 1
                     operation = MathOperationFactory.generate()
                     answer = ""

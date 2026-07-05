@@ -65,6 +65,7 @@ Implemented:
 * Answer validation with user feedback
 * Automatic question progression
 * Dynamic question counter
+* Score tracking
 * Player model
 * MathOperation model
 * OperationType enum
@@ -74,11 +75,10 @@ Implemented:
 ## Planned:
 
 * Difficulty levels
-* Score tracking
 * Player progression
 * Statistics and achievements
 * Android version
 
 ## Project Status
 
-Currently in early development with the core domain models, random math operation generation, the initial navigation flow, and a playable arithmetic game loop featuring answer validation and automatic question progression.
+Currently in early development with the core domain models, random math operation generation, and a playable arithmetic game loop featuring score tracking, answer validation, and automatic question progression.
