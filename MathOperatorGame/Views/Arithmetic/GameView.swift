@@ -2,9 +2,10 @@ import SwiftUI
 
 struct GameView: View {
 
-    let operation = MathOperationFactory.generate()
-
+    @State private var operation = MathOperationFactory.generate()
     @State private var answer = ""
+    @State private var feedback = ""
+    @State private var isCorrect = false
 
     var body: some View {
 
@@ -23,11 +24,31 @@ struct GameView: View {
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.numberPad)
 
-            Button("Check Answer") {
-
+            Button(action: {
+                
+                guard let userAnswer = Int(answer) else {
+                    feedback = "Please enter a valid number."
+                    isCorrect = false
+                    return
+                }
+                
+                if userAnswer == operation.calculateAnswer() {
+                    feedback = "✅ Correct!"
+                    isCorrect = true
+                } else {
+                    feedback = "❌ Incorrect. Try again!"
+                    isCorrect = false
+                }
+                
+            }) {
+                Text("Check Answer")
             }
             .buttonStyle(.borderedProminent)
-
+            
+            Text(feedback)
+                .font(.headline)
+                .foregroundStyle(isCorrect ? .green : .red)
+            
             Spacer()
         }
         .padding()
