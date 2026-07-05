@@ -26,7 +26,7 @@ MathOperatorGame/
 
 ## Features
 
-Core arithmetic operations planned for the first playable version:
+Current arithmetic operations:
 
 * Addition
 * Subtraction
@@ -61,24 +61,25 @@ Implemented:
 * Navigation to learning areas
 * Learning areas screen
 * Arithmetic difficulty selection screen
-* Initial game screen
+* Playable arithmetic game screen
 * Answer validation with user feedback
 * Automatic question progression
 * Dynamic question counter
 * Score tracking
+* Dynamic difficulty progression based on player score
 * Player model
 * MathOperation model
 * OperationType enum
 * Automatic answer calculation logic
 * Random math operation generation
 
-## Planned:
+## Planned
 
-* Difficulty levels
+* Difficulty selection integration
 * Player progression
 * Statistics and achievements
 * Android version
 
 ## Project Status
 
-Currently in early development with the core domain models, random math operation generation, and a playable arithmetic game loop featuring score tracking, answer validation, and automatic question progression.
+Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, and adaptive difficulty based on the player's performance.

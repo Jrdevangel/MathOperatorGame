@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GameView: View {
 
-    @State private var operation = MathOperationFactory.generate()
+    @State private var operation = MathOperationFactory.generate(score: 0)
     @State private var answer = ""
     @State private var feedback = ""
     @State private var isCorrect = false
@@ -45,7 +45,7 @@ struct GameView: View {
                     
                     score += 1
                     questionNumber += 1
-                    operation = MathOperationFactory.generate()
+                    operation = MathOperationFactory.generate(score: score)
                     answer = ""
                     
                 } else {
