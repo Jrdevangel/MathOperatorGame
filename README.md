@@ -31,7 +31,7 @@ Current arithmetic operations:
 * Addition
 * Subtraction
 * Multiplication
-* Division
+* Division (exact integer results)
 
 ## Technologies
 
@@ -67,6 +67,7 @@ Implemented:
 * Dynamic question counter
 * Score tracking
 * Dynamic difficulty progression based on player score
+* Exact division generation
 * Player model
 * MathOperation model
 * OperationType enum
@@ -82,4 +83,4 @@ Implemented:
 
 ## Project Status
 
-Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, and adaptive difficulty based on the player's performance.
+Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, adaptive difficulty based on the player's performance, and exact integer division generation.
