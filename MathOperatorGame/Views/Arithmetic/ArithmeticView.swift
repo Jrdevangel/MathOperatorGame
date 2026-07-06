@@ -16,19 +16,19 @@ struct ArithmeticView: View {
 
             Spacer()
 
-            NavigationLink(destination: GameView()) {
+            NavigationLink(destination: GameView(difficulty: .easy)) {
                 Text("Easy")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
 
-            NavigationLink(destination: Text("Medium Mode")) {
+            NavigationLink(destination: GameView(difficulty: .medium)) {
                 Text("Medium")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.bordered)
 
-            NavigationLink(destination: Text("Advanced Mode")) {
+            NavigationLink(destination: GameView(difficulty: .advanced)) {
                 Text("Advanced")
                     .frame(maxWidth: .infinity)
             }

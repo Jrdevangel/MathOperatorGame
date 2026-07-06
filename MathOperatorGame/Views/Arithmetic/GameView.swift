@@ -2,13 +2,26 @@ import SwiftUI
 
 struct GameView: View {
 
-    @State private var operation = MathOperationFactory.generate(score: 0)
+    let difficulty: Difficulty
+
+    @State private var operation: MathOperation
     @State private var answer = ""
     @State private var feedback = ""
     @State private var isCorrect = false
     @State private var questionNumber = 1
     @State private var score = 0
-    
+
+    init(difficulty: Difficulty) {
+
+        self.difficulty = difficulty
+
+        _operation = State(
+            initialValue: MathOperationFactory.generate(
+                score: difficulty.initialScore
+            )
+        )
+    }
+
     var body: some View {
 
         VStack(spacing: 30) {
@@ -20,7 +33,7 @@ struct GameView: View {
             Text("⭐ Score: \(score)")
                 .font(.title2)
                 .fontWeight(.semibold)
-            
+
             Text(
                 "\(operation.firstNumber) \(symbol) \(operation.secondNumber) = ?"
             )
@@ -31,38 +44,40 @@ struct GameView: View {
                 .keyboardType(.numberPad)
 
             Button(action: {
-                
+
                 guard let userAnswer = Int(answer) else {
                     feedback = "Please enter a valid number."
                     isCorrect = false
                     return
                 }
-                
+
                 if userAnswer == operation.calculateAnswer() {
-                    
+
                     feedback = "✅ Correct!"
                     isCorrect = true
-                    
+
                     score += 1
                     questionNumber += 1
-                    operation = MathOperationFactory.generate(score: score)
+                    operation = MathOperationFactory.generate(
+                        score: difficulty.initialScore + score
+                    )
                     answer = ""
-                    
+
                 } else {
-                    
+
                     feedback = "❌ Incorrect. Try again!"
                     isCorrect = false
                 }
-                
+
             }) {
                 Text("Check Answer")
             }
             .buttonStyle(.borderedProminent)
-            
+
             Text(feedback)
                 .font(.headline)
                 .foregroundStyle(isCorrect ? .green : .red)
-            
+
             Spacer()
         }
         .padding()
@@ -88,5 +103,5 @@ struct GameView: View {
 }
 
 #Preview {
-    GameView()
+    GameView(difficulty: .easy)
 }

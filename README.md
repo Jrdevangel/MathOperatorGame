@@ -69,7 +69,7 @@ Implemented:
 * Score tracking
 * Dynamic difficulty progression based on player score
 * Exact division generation
-* Difficulty model
+* Difficulty selection integrated into gameplay
 * Player model
 * MathOperation model
 * OperationType enum
@@ -78,11 +78,10 @@ Implemented:
 
 ## Planned
 
-* Difficulty selection integration
 * Player progression
 * Statistics and achievements
 * Android version
 
 ## Project Status
 
-Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, adaptive difficulty based on the player's performance, exact integer division generation, and a dedicated difficulty model ready for integration.
+Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, adaptive difficulty based on the player's performance, exact integer division generation, and fully integrated difficulty selection.
