@@ -10,6 +10,7 @@ MathOperatorGame/
 ├── MathOperatorGame.xcodeproj
 └── MathOperatorGame/
     ├── Models/
+    │   ├── Difficulty.swift
     │   ├── Player.swift
     │   ├── MathOperation.swift
     │   ├── OperationType.swift
@@ -68,6 +69,7 @@ Implemented:
 * Score tracking
 * Dynamic difficulty progression based on player score
 * Exact division generation
+* Difficulty model
 * Player model
 * MathOperation model
 * OperationType enum
@@ -83,4 +85,4 @@ Implemented:
 
 ## Project Status
 
-Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, adaptive difficulty based on the player's performance, and exact integer division generation.
+Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, adaptive difficulty based on the player's performance, exact integer division generation, and a dedicated difficulty model ready for integration.
