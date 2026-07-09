@@ -1,107 +1,64 @@
 import SwiftUI
 
 struct GameView: View {
-
-    let difficulty: Difficulty
-
-    @State private var operation: MathOperation
-    @State private var answer = ""
-    @State private var feedback = ""
-    @State private var isCorrect = false
-    @State private var questionNumber = 1
-    @State private var score = 0
-
+    
+    @State private var viewModel:GameViewModel
+    
     init(difficulty: Difficulty) {
-
-        self.difficulty = difficulty
-
-        _operation = State(
-            initialValue: MathOperationFactory.generate(
-                score: difficulty.initialScore
+        
+        _viewModel = State(
+            initialValue: GameViewModel(
+                difficulty: difficulty
             )
         )
     }
-
+    
     var body: some View {
-
+        
         VStack(spacing: 30) {
-
-            Text("Question \(questionNumber)")
+            
+            Text("Question \(viewModel.questionNumber)")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-
-            Text("⭐ Score: \(score)")
+            
+            Text("⭐ Score: \(viewModel.score)")
                 .font(.title2)
                 .fontWeight(.semibold)
-
+            
             Text(
-                "\(operation.firstNumber) \(symbol) \(operation.secondNumber) = ?"
+                "\(viewModel.operation.firstNumber) \(viewModel.operation.secondNumber) = ?"
             )
             .font(.system(size: 42, weight: .bold))
-
-            TextField("Your answer", text: $answer)
-                .textFieldStyle(.roundedBorder)
-                .keyboardType(.numberPad)
-
-            Button(action: {
-
-                guard let userAnswer = Int(answer) else {
-                    feedback = "Please enter a valid number."
-                    isCorrect = false
-                    return
-                }
-
-                if userAnswer == operation.calculateAnswer() {
-
-                    feedback = "✅ Correct!"
-                    isCorrect = true
-
-                    score += 1
-                    questionNumber += 1
-                    operation = MathOperationFactory.generate(
-                        score: difficulty.initialScore + score
-                    )
-                    answer = ""
-
-                } else {
-
-                    feedback = "❌ Incorrect. Try again!"
-                    isCorrect = false
-                }
-
-            }) {
+            
+            TextField(
+                "Your answer",
+                text: $viewModel.answer
+            )
+            .textFieldStyle(.roundedBorder)
+            .keyboardType(.numberPad)
+            
+            Button {
+                
+                viewModel.checkAnswer()
+                
+            } label: {
+                
                 Text("Check Answer")
             }
             .buttonStyle(.borderedProminent)
-
-            Text(feedback)
+            
+            Text(viewModel.feedback)
                 .font(.headline)
-                .foregroundStyle(isCorrect ? .green : .red)
-
+                .foregroundStyle(
+                    viewModel.isCorrect ? .green : .red
+                )
+            
             Spacer()
         }
         .padding()
     }
-
-    private var symbol: String {
-
-        switch operation.operationType {
-
-        case .addition:
-            return "+"
-
-        case .subtraction:
-            return "-"
-
-        case .multiplication:
-            return "×"
-
-        case .division:
-            return "÷"
-        }
-    }
 }
-
+        
 #Preview {
     GameView(difficulty: .easy)
 }
