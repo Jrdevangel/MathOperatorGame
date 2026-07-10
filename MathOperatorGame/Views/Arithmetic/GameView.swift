@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GameView: View {
     
-    @State private var viewModel:GameViewModel
+    @State private var viewModel: GameViewModel
     
     init(difficulty: Difficulty) {
         
@@ -15,6 +15,8 @@ struct GameView: View {
     
     var body: some View {
         
+        @Bindable var viewModel = viewModel
+        
         VStack(spacing: 30) {
             
             Text("Question \(viewModel.questionNumber)")
@@ -26,7 +28,7 @@ struct GameView: View {
                 .fontWeight(.semibold)
             
             Text(
-                "\(viewModel.operation.firstNumber) \(viewModel.operation.secondNumber) = ?"
+                "\(viewModel.operation.firstNumber) \(viewModel.symbol) \(viewModel.operation.secondNumber) = ?"
             )
             .font(.system(size: 42, weight: .bold))
             
@@ -58,7 +60,7 @@ struct GameView: View {
         .padding()
     }
 }
-        
+
 #Preview {
     GameView(difficulty: .easy)
 }

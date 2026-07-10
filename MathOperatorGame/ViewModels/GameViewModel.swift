@@ -21,7 +21,6 @@ class GameViewModel {
         )
     }
 
-
     func checkAnswer() {
 
         guard let userAnswer = Int(answer) else {
@@ -30,7 +29,6 @@ class GameViewModel {
             isCorrect = false
             return
         }
-
 
         if userAnswer == operation.calculateAnswer() {
 
@@ -52,7 +50,6 @@ class GameViewModel {
             isCorrect = false
         }
     }
-
 
     var symbol: String {
 

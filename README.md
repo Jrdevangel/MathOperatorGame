@@ -72,7 +72,9 @@ Implemented:
 * Dynamic difficulty progression based on player score
 * Exact division generation
 * Difficulty selection integrated into gameplay
-* GameViewModel architecture introduced for game logic separation
+* MVVM architecture implementation
+* GameViewModel separation from SwiftUI views
+* Reactive state management using Observation framewok
 * Player model
 * MathOperation model
 * OperationType enum
@@ -81,11 +83,10 @@ Implemented:
 
 ## Planned
 
-* Complete GameView and GameViewModel separation
 * Player progression
 * Statistics and achievements
 * Android version
 
 ## Project Status
 
-Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, adaptive difficulty based on the player's performance, exact integer division generation, integrated difficulty selection, and an evolving MVVM architecture separating game logic from the user interface.
+Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, adaptive difficulty based on the player's performance, exact integer division generation, integrated difficulty selection, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
