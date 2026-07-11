@@ -72,7 +72,7 @@ Implemented:
 * Answer validation with user feedback
 * Automatic question progression
 * Dynamic question counter
-* Score tracking
+* Game session score tracking
 * Dynamic difficulty progression based on player score
 * Exact division generation
 * Difficulty selection integrated into gameplay
@@ -84,7 +84,9 @@ Implemented:
 * OperationType enum
 * Automatic answer calculation logic
 * Random math operation generation
-* GameSession model introduced for game state management
+* GameSession model implemented for game state tracking and statistics management
+* Answer accuracy tracking
+* Streak tracking system
 
 ## Planned
 

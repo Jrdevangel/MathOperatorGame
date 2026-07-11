@@ -36,4 +36,8 @@ struct GameSession {
         
         return Double(correctAnswers) / Double(questionsAnswered)
     }
+    
+    var currentQuestionNumber: Int {
+        questionsAnswered + 1
+    }
 }

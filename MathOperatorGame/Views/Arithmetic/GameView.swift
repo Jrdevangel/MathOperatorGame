@@ -19,11 +19,11 @@ struct GameView: View {
         
         VStack(spacing: 30) {
             
-            Text("Question \(viewModel.questionNumber)")
+            Text("Question \(viewModel.session.currentQuestionNumber)")
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
-            Text("⭐ Score: \(viewModel.score)")
+            Text("⭐ Score: \(viewModel.session.score)")
                 .font(.title2)
                 .fontWeight(.semibold)
             

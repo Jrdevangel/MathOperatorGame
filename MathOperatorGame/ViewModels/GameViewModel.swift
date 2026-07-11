@@ -5,16 +5,19 @@ class GameViewModel {
 
     let difficulty: Difficulty
 
+    var session: GameSession
+
     var operation: MathOperation
     var answer = ""
     var feedback = ""
     var isCorrect = false
-    var questionNumber = 1
-    var score = 0
-
+    
     init(difficulty: Difficulty) {
 
         self.difficulty = difficulty
+        self.session = GameSession(
+            difficulty: difficulty
+        )
 
         self.operation = MathOperationFactory.generate(
             score: difficulty.initialScore
@@ -35,11 +38,10 @@ class GameViewModel {
             feedback = "✅ Correct!"
             isCorrect = true
 
-            score += 1
-            questionNumber += 1
-
+            session.registerCorrectAnswer()
+            
             operation = MathOperationFactory.generate(
-                score: difficulty.initialScore + score
+                score: difficulty.initialScore + session.score
             )
 
             answer = ""
@@ -48,6 +50,7 @@ class GameViewModel {
 
             feedback = "❌ Incorrect. Try again!"
             isCorrect = false
+            session.registerIncorrectAnswer()
         }
     }
 
