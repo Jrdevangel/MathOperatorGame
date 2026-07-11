@@ -11,18 +11,22 @@ MathOperatorGame/
 └── MathOperatorGame/
     ├── Models/
     │   ├── Difficulty.swift
-    │   ├── Player.swift
+    │   ├── GameSession.swift
     │   ├── MathOperation.swift
+    │   ├── MathOperationFactory.swift
     │   ├── OperationType.swift
-    │   └── MathOperationFactory.swift
+    │   └── Player.swift
+    │
     ├── ViewModels/
     │   └── GameViewModel.swift
+    │
     ├── Views/
     │   ├── WelcomeView.swift
     │   ├── LearningAreasView.swift
     │   └── Arithmetic/
     │       ├── ArithmeticView.swift
     │       └── GameView.swift
+    │
     ├── ContentView.swift
     └── MathOperatorGameApp.swift
 ```
@@ -74,12 +78,13 @@ Implemented:
 * Difficulty selection integrated into gameplay
 * MVVM architecture implementation
 * GameViewModel separation from SwiftUI views
-* Reactive state management using Observation framewok
+* Reactive state management using Observation framework
 * Player model
 * MathOperation model
 * OperationType enum
 * Automatic answer calculation logic
 * Random math operation generation
+* GameSession model introduced for game state management
 
 ## Planned
 
