@@ -40,9 +40,7 @@ class GameViewModel {
 
             session.registerCorrectAnswer()
             
-            operation = MathOperationFactory.generate(
-                score: difficulty.initialScore + session.score
-            )
+            generateNextOperation()
 
             answer = ""
 
@@ -50,8 +48,16 @@ class GameViewModel {
 
             feedback = "❌ Incorrect. Try again!"
             isCorrect = false
+            
             session.registerIncorrectAnswer()
         }
+    }
+    
+    private func generateNextOperation() {
+        
+        operation = MathOperationFactory.generate(
+            score: difficulty.initialScore + session.score
+        )
     }
 
     var symbol: String {

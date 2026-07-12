@@ -85,8 +85,6 @@ Implemented:
 * Automatic answer calculation logic
 * Random math operation generation
 * GameSession model implemented for game state management, statistics tracking, accuracy calculation, and streak management
-* Answer accuracy tracking
-* Streak tracking system
 
 ## Planned
 
@@ -96,4 +94,4 @@ Implemented:
 
 ## Project Status
 
-Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, adaptive difficulty based on the player's performance, exact integer division generation, integrated difficulty selection, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
+Currently in early development with a playable arithmetic game loop featuring score tracking, automatic question progression, answer validation, adaptive difficulty based on player performance, exact integer division generation, integrated difficulty selection, game statistics, streak tracking, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
