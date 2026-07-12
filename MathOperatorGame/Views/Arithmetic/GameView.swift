@@ -27,6 +27,17 @@ struct GameView: View {
                 .font(.title2)
                 .fontWeight(.semibold)
             
+            Text("🔥 Streak: \(viewModel.session.currentStreak)")
+                .font(.title3)
+
+            Text("🏆 Best: \(viewModel.session.bestStreak)")
+                .font(.title3)
+
+            Text(
+                "🎯 Accuracy: \(Int(viewModel.session.accuracy * 100))%"
+            )
+            .font(.title3)
+            
             Text(
                 "\(viewModel.operation.firstNumber) \(viewModel.symbol) \(viewModel.operation.secondNumber) = ?"
             )
