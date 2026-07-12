@@ -12,11 +12,11 @@ MathOperatorGame/
     ├── Models/
     │   ├── Difficulty.swift
     │   ├── GameSession.swift
+    │   ├── GameState.swift
     │   ├── MathOperation.swift
     │   ├── MathOperationFactory.swift
     │   ├── OperationType.swift
     │   └── Player.swift
-    │
     ├── ViewModels/
     │   └── GameViewModel.swift
     │
@@ -85,6 +85,8 @@ Implemented:
 * Automatic answer calculation logic
 * Random math operation generation
 * GameSession model implemented for game state management, statistics tracking, accuracy calculation, and streak management
+* GameState enum implemented for controlling game lifecycle states
+* Game session completion detection with question limits
 
 ## Planned
 

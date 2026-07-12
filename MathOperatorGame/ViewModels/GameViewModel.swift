@@ -8,6 +8,8 @@ class GameViewModel {
     var session: GameSession
 
     var operation: MathOperation
+    
+    var state: GameState = .playing
     var answer = ""
     var feedback = ""
     var isCorrect = false
@@ -34,18 +36,22 @@ class GameViewModel {
         }
 
         if userAnswer == operation.calculateAnswer() {
-
+            
             feedback = "✅ Correct!"
             isCorrect = true
-
+            
             session.registerCorrectAnswer()
             
-            generateNextOperation()
-
+            if session.isFinished {
+                state = .finished
+            } else {
+                generateNextOperation()
+            }
+            
             answer = ""
-
+            
         } else {
-
+            
             feedback = "❌ Incorrect. Try again!"
             isCorrect = false
             

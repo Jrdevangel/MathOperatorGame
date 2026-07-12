@@ -3,6 +3,7 @@ import Foundation
 struct GameSession {
     
     let difficulty: Difficulty
+    let maxQuestions = 10
     
     private(set) var score = 0
     private(set) var questionsAnswered = 0
@@ -39,5 +40,9 @@ struct GameSession {
     
     var currentQuestionNumber: Int {
         questionsAnswered + 1
+    }
+    
+    var isFinished: Bool {
+        questionsAnswered >= maxQuestions
     }
 }
