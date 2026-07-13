@@ -17,61 +17,76 @@ struct GameView: View {
         
         @Bindable var viewModel = viewModel
         
-        VStack(spacing: 30) {
+        switch viewModel.state {
+        case .playing:
             
-            Text("Question \(viewModel.session.currentQuestionNumber)")
-                .font(.largeTitle)
-                .fontWeight(.bold)
+            gameContent(viewModel: viewModel)
             
-            Text("⭐ Score: \(viewModel.session.score)")
-                .font(.title2)
-                .fontWeight(.semibold)
+        case .finished:
             
-            Text("🔥 Streak: \(viewModel.session.currentStreak)")
-                .font(.title3)
-
-            Text("🏆 Best: \(viewModel.session.bestStreak)")
-                .font(.title3)
-
-            Text(
-                "🎯 Accuracy: \(Int(viewModel.session.accuracy * 100))%"
+            ResultView(
+                session: viewModel.session
             )
-            .font(.title3)
-            
-            Text(
-                "\(viewModel.operation.firstNumber) \(viewModel.symbol) \(viewModel.operation.secondNumber) = ?"
-            )
-            .font(.system(size: 42, weight: .bold))
-            
-            TextField(
-                "Your answer",
-                text: $viewModel.answer
-            )
-            .textFieldStyle(.roundedBorder)
-            .keyboardType(.numberPad)
-            
-            Button {
-                
-                viewModel.checkAnswer()
-                
-            } label: {
-                
-                Text("Check Answer")
-            }
-            .buttonStyle(.borderedProminent)
-            
-            Text(viewModel.feedback)
-                .font(.headline)
-                .foregroundStyle(
-                    viewModel.isCorrect ? .green : .red
-                )
-            
-            Spacer()
         }
-        .padding()
     }
-}
-
-#Preview {
-    GameView(difficulty: .easy)
-}
+    
+        private func gameContent(viewModel: GameViewModel) -> some View {
+            
+            VStack(spacing: 30) {
+                
+                Text("Question \(viewModel.session.currentQuestionNumber)")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                
+                Text("⭐ Score: \(viewModel.session.score)")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                
+                Text("🔥 Streak: \(viewModel.session.currentStreak)")
+                    .font(.title3)
+                
+                Text("🏆 Best: \(viewModel.session.bestStreak)")
+                    .font(.title3)
+                
+                Text(
+                    "🎯 Accuracy: \(Int(viewModel.session.accuracy * 100))%"
+                )
+                .font(.title3)
+                
+                Text(
+                    "\(viewModel.operation.firstNumber) \(viewModel.symbol) \(viewModel.operation.secondNumber) = ?"
+                )
+                .font(.system(size: 42, weight: .bold))
+                
+                TextField(
+                    "Your answer",
+                    text: $viewModel.answer
+                )
+                .textFieldStyle(.roundedBorder)
+                .keyboardType(.numberPad)
+                
+                Button {
+                    
+                    viewModel.checkAnswer()
+                    
+                } label: {
+                    
+                    Text("Check Answer")
+                }
+                .buttonStyle(.borderedProminent)
+                
+                Text(viewModel.feedback)
+                    .font(.headline)
+                    .foregroundStyle(
+                        viewModel.isCorrect ? .green : .red
+                    )
+                
+                Spacer()
+            }
+            .padding()
+        }
+    }
+    
+    #Preview {
+        GameView(difficulty: .easy)
+    }

@@ -17,16 +17,18 @@ MathOperatorGame/
     │   ├── MathOperationFactory.swift
     │   ├── OperationType.swift
     │   └── Player.swift
+    │
     ├── ViewModels/
     │   └── GameViewModel.swift
     │
     ├── Views/
     │   ├── WelcomeView.swift
     │   ├── LearningAreasView.swift
-    |   ├── ResultView.swift
+    │   │
     │   └── Arithmetic/
     │       ├── ArithmeticView.swift
-    │       └── GameView.swift
+    │       ├── GameView.swift
+    │       └── ResultView.swift
     │
     ├── ContentView.swift
     └── MathOperatorGameApp.swift
@@ -88,11 +90,13 @@ Implemented:
 * GameSession model implemented for game state management, statistics tracking, accuracy calculation, and streak management
 * GameState enum implemented for controlling game lifecycle states
 * Game session completion detection with question limits
-* Result screen displaying final game statistics
+* ResultView implemented for displaying final game statistics
 * Final score summary
 * Accuracy percentage display
 * Correct answers summary
 * Best streak statistics display
+* ResultView integrated into the arithmetic game flow
+* Game lifecycle management and navigation between active gameplay and final results
 
 ## Planned
 
@@ -102,4 +106,4 @@ Implemented:
 
 ## Project Status
 
-Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, game statistics, streak tracking, session completion handling, result visualization, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
+Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, game statistics, streak tracking, result screen presentation, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
