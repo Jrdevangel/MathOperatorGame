@@ -2,11 +2,11 @@ import Observation
 
 @Observable
 class GameViewModel {
-
+    
     let difficulty: Difficulty
-
+    
     var session: GameSession
-
+    
     var operation: MathOperation
     
     var state: GameState = .playing
@@ -15,26 +15,26 @@ class GameViewModel {
     var isCorrect = false
     
     init(difficulty: Difficulty) {
-
+        
         self.difficulty = difficulty
         self.session = GameSession(
             difficulty: difficulty
         )
-
+        
         self.operation = MathOperationFactory.generate(
             score: difficulty.initialScore
         )
     }
-
+    
     func checkAnswer() {
-
+        
         guard let userAnswer = Int(answer) else {
-
+            
             feedback = "Please enter a valid number."
             isCorrect = false
             return
         }
-
+        
         if userAnswer == operation.calculateAnswer() {
             
             feedback = "✅ Correct!"
@@ -64,6 +64,23 @@ class GameViewModel {
         operation = MathOperationFactory.generate(
             score: difficulty.initialScore + session.score
         )
+    }
+    
+        func restartGame() {
+            
+            session = GameSession(
+                difficulty: difficulty
+            )
+        
+        operation = MathOperationFactory.generate(
+            score: difficulty.initialScore
+        )
+        
+        state = .playing
+        
+        answer = ""
+        feedback = ""
+        isCorrect = false
     }
 
     var symbol: String {

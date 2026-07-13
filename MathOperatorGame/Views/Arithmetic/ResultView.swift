@@ -4,6 +4,10 @@ struct ResultView: View {
     
     let session: GameSession
     
+    let onPlayAgain: () -> Void
+    let onBackToMenu: () -> Void
+    
+    
     var body: some View {
         
         VStack(spacing: 25) {
@@ -30,6 +34,20 @@ struct ResultView: View {
             }
             .font(.title3)
             
+            Button {
+                onPlayAgain()
+            } label: {
+                Text("Play Again")
+            }
+            .buttonStyle(.borderedProminent)
+            
+            
+            Button {
+                onBackToMenu()
+            } label: {
+                Text("Back to Menu")
+            }
+            .buttonStyle(.bordered)
             Spacer()
         }
         .padding()
@@ -40,6 +58,8 @@ struct ResultView: View {
     ResultView(
         session: GameSession(
             difficulty: .easy
-        )
+        ),
+        onPlayAgain: {},
+        onBackToMenu: {}
     )
 }

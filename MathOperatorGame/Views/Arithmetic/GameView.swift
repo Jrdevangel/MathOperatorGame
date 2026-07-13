@@ -25,7 +25,13 @@ struct GameView: View {
         case .finished:
             
             ResultView(
-                session: viewModel.session
+                session: viewModel.session,
+                onPlayAgain: {
+                    viewModel.restartGame()
+                },
+                onBackToMenu: {
+                    print("Back to menu")
+                }
             )
         }
     }
