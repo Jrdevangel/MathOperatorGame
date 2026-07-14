@@ -102,6 +102,8 @@ Implemented:
 * Game session restart flow
 * Result screen action buttons
 * Play Again and Back to Menu user actions
+* NavigationStack based game flow
+* Result screen dismissal returning to difficulty selection
 
 ## Planned
 

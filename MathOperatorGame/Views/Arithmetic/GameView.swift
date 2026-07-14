@@ -4,6 +4,8 @@ struct GameView: View {
     
     @State private var viewModel: GameViewModel
     
+    @Environment(\.dismiss) private var dismiss
+    
     init(difficulty: Difficulty) {
         
         _viewModel = State(
@@ -30,7 +32,7 @@ struct GameView: View {
                     viewModel.restartGame()
                 },
                 onBackToMenu: {
-                    print("Back to menu")
+                    dismiss()
                 }
             )
         }
