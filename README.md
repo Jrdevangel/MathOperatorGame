@@ -16,7 +16,8 @@ MathOperatorGame/
     │   ├── MathOperation.swift
     │   ├── MathOperationFactory.swift
     │   ├── OperationType.swift
-    │   └── Player.swift
+    │   ├── Player.swift
+    │   └── PlayerManager.swift
     │
     ├── ViewModels/
     │   └── GameViewModel.swift
@@ -111,6 +112,7 @@ Implemented:
 * Best score tracking per difficulty
 * Global accuracy calculation
 * Player session registration
+* PlayerManager implemented for shared player state
 
 ## Planned
 
