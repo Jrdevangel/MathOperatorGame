@@ -113,6 +113,10 @@ Implemented:
 * Global accuracy calculation
 * Player session registration
 * PlayerManager implemented for shared player state
+* Shared PlayerManager integration
+* Automatic player statistics registration after completed games
+* Dependency injection of shared player state
+
 
 ## Planned
 
@@ -122,4 +126,4 @@ Implemented:
 
 ## Project Status
 
-Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, game statistics, streak tracking, result screen presentation, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
+Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, game statistics, result screen presentation, shared player state management, automatic player statistics registration, and an MVVM architecture separating business logic from the SwiftUI presentation layer.

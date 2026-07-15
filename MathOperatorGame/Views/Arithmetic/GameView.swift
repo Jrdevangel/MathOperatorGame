@@ -3,14 +3,21 @@ import SwiftUI
 struct GameView: View {
     
     @State private var viewModel: GameViewModel
+    let playerManager: PlayerManager
     
     @Environment(\.dismiss) private var dismiss
     
-    init(difficulty: Difficulty) {
+    init(
+        difficulty: Difficulty,
+        playerManager: PlayerManager
+    ) {
+        
+        self.playerManager = playerManager
         
         _viewModel = State(
             initialValue: GameViewModel(
-                difficulty: difficulty
+                difficulty: difficulty,
+                playerManager: playerManager
             )
         )
     }
@@ -96,5 +103,8 @@ struct GameView: View {
     }
     
     #Preview {
-        GameView(difficulty: .easy)
+        GameView(
+            difficulty: .easy,
+            playerManager: PlayerManager()
+        )
     }

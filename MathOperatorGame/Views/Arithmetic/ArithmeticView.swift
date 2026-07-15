@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ArithmeticView: View {
+    
+    @State private var playerManager = PlayerManager()
 
     var body: some View {
 
@@ -16,19 +18,34 @@ struct ArithmeticView: View {
 
             Spacer()
 
-            NavigationLink(destination: GameView(difficulty: .easy)) {
+            NavigationLink(
+                destination: GameView(
+                    difficulty: .easy,
+                    playerManager: playerManager
+                )
+            ) {
                 Text("Easy")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.borderedProminent)
 
-            NavigationLink(destination: GameView(difficulty: .medium)) {
+            NavigationLink(
+                destination: GameView(
+                    difficulty: .medium,
+                    playerManager: playerManager
+                    )
+                ) {
                 Text("Medium")
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.bordered)
 
-            NavigationLink(destination: GameView(difficulty: .advanced)) {
+            NavigationLink(
+                destination: GameView(
+                    difficulty: .advanced,
+                    playerManager: playerManager
+                )
+            ) {
                 Text("Advanced")
                     .frame(maxWidth: .infinity)
             }
