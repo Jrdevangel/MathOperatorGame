@@ -92,6 +92,7 @@ Implemented:
 * Game session completion detection with question limits
 * ResultView implemented for displaying final game statistics
 * Final score summary
+* Selected difficulty displayed on the result screen
 * Accuracy percentage display
 * Correct answers summary
 * Best streak statistics display
@@ -104,6 +105,7 @@ Implemented:
 * Play Again and Back to Menu user actions
 * NavigationStack based game flow
 * Result screen dismissal returning to difficulty selection
+* Difficulty displayed on the result screen
 
 ## Planned
 

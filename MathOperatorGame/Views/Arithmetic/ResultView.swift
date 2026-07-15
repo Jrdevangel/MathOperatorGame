@@ -18,6 +18,8 @@ struct ResultView: View {
             
             Text("Final Score")
                 .font(.title2)
+        
+            Text("Difficulty: \(session.difficulty.title)")
             
             Text("\(session.score) / \(session.maxQuestions)")
                 .font(.system(size: 48, weight: .bold))
