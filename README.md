@@ -106,6 +106,11 @@ Implemented:
 * NavigationStack based game flow
 * Result screen dismissal returning to difficulty selection
 * Difficulty displayed on the result screen
+* Player model redesigned for persistent statistics
+* Global player statistics tracking
+* Best score tracking per difficulty
+* Global accuracy calculation
+* Player session registration
 
 ## Planned
 
