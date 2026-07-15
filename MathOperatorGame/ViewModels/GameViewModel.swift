@@ -4,7 +4,8 @@ import Observation
 class GameViewModel {
     
     let difficulty: Difficulty
-    
+    let playerManager: PlayerManager
+
     var session: GameSession
     
     var operation: MathOperation
@@ -14,9 +15,14 @@ class GameViewModel {
     var feedback = ""
     var isCorrect = false
     
-    init(difficulty: Difficulty) {
+    init(
+        difficulty: Difficulty,
+        playerManager: PlayerManager
+    ) {
         
         self.difficulty = difficulty
+        self.playerManager = playerManager
+        
         self.session = GameSession(
             difficulty: difficulty
         )
@@ -43,8 +49,15 @@ class GameViewModel {
             session.registerCorrectAnswer()
             
             if session.isFinished {
+                
+                playerManager.register(
+                    session: session
+                )
+                
                 state = .finished
+                
             } else {
+                
                 generateNextOperation()
             }
             
