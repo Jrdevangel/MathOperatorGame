@@ -123,7 +123,9 @@ Implemented:
 * Statistics screen integrated into the main navigation
 * Shared player propagated across the application
 * Persistent player statistics available from the home screen
-
+* Achievement model implemented
+* AchievementManager implemented
+* Achievement evaluation system
 
 ## Planned
 
