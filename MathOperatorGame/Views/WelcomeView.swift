@@ -1,17 +1,25 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
+    @State private var playerManager = PlayerManager()
+    
     var body: some View {
+        
         NavigationStack {
+            
             VStack {
 
                 HStack {
+                    
                     Spacer()
 
-                    Button(action: {
-
-                    }) {
-                        Image(systemName: "globe")
+                    NavigationLink(
+                        destination: StatisticsView(playerManager: playerManager
+                        )
+                    ) {
+                        
+                        Image(systemName: "chart.bar.fill")
                             .font(.title2)
                     }
                     .padding(.trailing, 20)
@@ -32,7 +40,12 @@ struct WelcomeView: View {
 
                 Spacer()
 
-                NavigationLink(destination: LearningAreasView()) {
+                NavigationLink(
+                    destination: LearningAreasView(
+                        playerManager: playerManager
+                    )
+                ) {
+                    
                     Text("Start")
                         .font(.title2)
                         .fontWeight(.semibold)

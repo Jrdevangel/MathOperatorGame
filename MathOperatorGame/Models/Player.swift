@@ -1,6 +1,6 @@
 import Foundation
 
-struct Player {
+struct Player: Codable {
     
     let name: String
     

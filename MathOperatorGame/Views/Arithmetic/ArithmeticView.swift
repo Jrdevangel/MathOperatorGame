@@ -2,8 +2,8 @@ import SwiftUI
 
 struct ArithmeticView: View {
     
-    @State private var playerManager = PlayerManager()
-
+    let playerManager: PlayerManager
+    
     var body: some View {
 
         VStack(spacing: 25) {
@@ -61,6 +61,8 @@ struct ArithmeticView: View {
 
 #Preview {
     NavigationStack {
-        ArithmeticView()
+        ArithmeticView(
+            playerManager: PlayerManager()
+        )
     }
 }

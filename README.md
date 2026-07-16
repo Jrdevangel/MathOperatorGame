@@ -25,13 +25,13 @@ MathOperatorGame/
     ├── Views/
     │   ├── WelcomeView.swift
     │   ├── LearningAreasView.swift
+    │   ├── StatisticsView.swift
     │   │
     │   └── Arithmetic/
     │       ├── ArithmeticView.swift
     │       ├── GameView.swift
-    │       └── ResultView.swift
-    │
-    ├── ContentView.swift
+    │       └── ResultView.swift    
+    ├── ContentView.swift
     └── MathOperatorGameApp.swift
 ```
 
@@ -116,6 +116,13 @@ Implemented:
 * Shared PlayerManager integration
 * Automatic player statistics registration after completed games
 * Dependency injection of shared player state
+* Player persistence using UserDefaults
+* Automatic player loading at application startup
+* Automatic player saving after completed games
+* StatisticsView implemented
+* Statistics screen integrated into the main navigation
+* Shared player propagated across the application
+* Persistent player statistics available from the home screen
 
 
 ## Planned
@@ -126,4 +133,4 @@ Implemented:
 
 ## Project Status
 
-Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, game statistics, result screen presentation, shared player state management, automatic player statistics registration, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
+Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, persistent player statistics using UserDefaults, a shared player state across the application, a dedicated statistics screen, and an MVVM architecture separating business logic from the SwiftUI presentation layer.

@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct LearningAreasView: View {
+    
+    let playerManager: PlayerManager
 
     var body: some View {
 
@@ -13,7 +15,11 @@ struct LearningAreasView: View {
 
             Spacer()
 
-            NavigationLink(destination: ArithmeticView()) {
+            NavigationLink(
+                destination: ArithmeticView(
+                    playerManager: playerManager
+                )
+            ) {
                 LearningAreaRow(
                     title: "Arithmetic",
                     icon: "plus.forwardslash.minus"
@@ -88,6 +94,8 @@ struct LearningAreaRow: View {
 
 #Preview {
     NavigationStack {
-        LearningAreasView()
+        LearningAreasView(
+            playerManager: PlayerManager()
+        )
     }
 }
