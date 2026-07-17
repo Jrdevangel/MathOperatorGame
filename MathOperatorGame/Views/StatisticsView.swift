@@ -48,6 +48,43 @@ struct StatisticsView: View {
                     value: "\(playerManager.player.bestScoreAdvanced)"
                 )
             }
+            
+            Section("Achievements") {
+                
+                ForEach(
+                    AchievementManager.archievements(
+                        for: playerManager.player
+                    )
+                ) { achievement in
+                    
+                    HStack {
+                        
+                        Image(
+                            systemName: achievement.isUnlocked
+                            ? "checkmark.seal.fill"
+                            : "lock.fill"
+                        )
+                        .foregroundStyle(
+                            achievement.isUnlocked
+                            ? .green
+                            : .secondary
+                        )
+                        
+                        VStack(
+                            alignment: .leading,
+                            spacing: 4
+                        ) {
+                            
+                            Text(achievement.title)
+                                .font(.headline)
+                            
+                            Text(achievement.description)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+            }
         }
         .navigationTitle("Statistics")
     }

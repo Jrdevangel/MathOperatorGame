@@ -126,6 +126,8 @@ Implemented:
 * Achievement model implemented
 * AchievementManager implemented
 * Achievement evaluation system
+* Achievements integrated into the statistics screen
+* Achievement status visualization (locked and unlocked)
 
 ## Planned
 
@@ -135,4 +137,4 @@ Implemented:
 
 ## Project Status
 
-Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, persistent player statistics using UserDefaults, a shared player state across the application, a dedicated statistics screen, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
+Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, persistent player statistics using UserDefaults, a shared player state across the application, a dedicated statistics screen with achievements, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
