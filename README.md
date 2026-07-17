@@ -26,7 +26,8 @@ MathOperatorGame/
     │   ├── WelcomeView.swift
     │   ├── LearningAreasView.swift
     │   ├── StatisticsView.swift
-    │   │
+    |   ├── AchievementRow.swift
+    |   |
     │   └── Arithmetic/
     │       ├── ArithmeticView.swift
     │       ├── GameView.swift
