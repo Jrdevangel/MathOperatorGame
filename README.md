@@ -9,17 +9,18 @@ MathOperatorGame/
 ├── README.md
 ├── MathOperatorGame.xcodeproj
 └── MathOperatorGame/
-├── Models/
+    ├── Models/
     │   ├── Achievement.swift
     │   ├── AchievementManager.swift
     │   ├── Difficulty.swift
-    │   ├── GameSession.swift   
+    │   ├── GameSession.swift
     │   ├── GameState.swift
     │   ├── MathOperation.swift
     │   ├── MathOperationFactory.swift
     │   ├── OperationType.swift
     │   ├── Player.swift
-    │   └── PlayerManager.swift 
+    │   └── PlayerManager.swift
+    │
     ├── ViewModels/
     │   └── GameViewModel.swift
     │
@@ -33,7 +34,8 @@ MathOperatorGame/
     │       ├── ArithmeticView.swift
     │       ├── GameView.swift
     │       └── ResultView.swift
-    ├── ContentView.swift
+    │
+    ├── ContentView.swift
     └── MathOperatorGameApp.swift
 ```
 
@@ -136,6 +138,7 @@ Implemented:
 * Sample achievement data for SwiftUI previews
 * Achievement progress tracking model
 * Goal-based achievement structure
+* Achievement progress visualization using ProgressView
 
 ## Planned
 

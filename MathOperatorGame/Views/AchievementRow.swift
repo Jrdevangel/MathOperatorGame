@@ -20,10 +20,7 @@ struct AchievementRow: View {
                 : .secondary
             )
             
-            VStack(
-                alignment: .leading,
-                spacing: 4
-            ) {
+            VStack(alignment: .leading, spacing: 6) {
                 
                 Text(achievement.title)
                     .font(.headline)
@@ -31,6 +28,11 @@ struct AchievementRow: View {
                 Text(achievement.description)
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                
+                ProgressView(
+                    value: Double(achievement.progress),
+                    total: Double(achievement.goal)
+                )
             }
             
             Spacer()
