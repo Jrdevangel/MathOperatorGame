@@ -46,6 +46,8 @@ struct AchievementRow: View {
             id: "preview",
             title: "First Game",
             description: "Complete your first game.",
+            progress: 1,
+            goal: 1,
             isUnlocked: true)
     )
 }
