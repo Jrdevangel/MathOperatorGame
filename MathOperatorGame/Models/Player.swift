@@ -27,6 +27,10 @@ struct Player: Codable {
         return Double(totalCorrectAnswers) / Double(totalQuestionsAnswered)
     }
     
+    var accuracyPercentage: Int {
+        Int(globalAccuracy * 100)
+    }
+    
     mutating func register(session: GameSession) {
         
         totalGamesPlayed += 1

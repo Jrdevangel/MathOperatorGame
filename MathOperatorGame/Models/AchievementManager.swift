@@ -50,7 +50,7 @@ struct AchievementManager {
             title: "Accurate Player",
             description: "Reach 90% overall accuracy.",
             progress: min(
-                Int(player.globalAccuracy * 100),
+                player.accuracyPercentage,
                 90
             ),
             goal: 90,

@@ -22,7 +22,7 @@ struct StatisticsView: View {
                 
                 LabeledContent(
                     "Accuracy",
-                    value: "\(Int(playerManager.player.globalAccuracy * 100))%"
+                    value: "\(playerManager.player.accuracyPercentage)%"
                 )
                 
                 LabeledContent(
