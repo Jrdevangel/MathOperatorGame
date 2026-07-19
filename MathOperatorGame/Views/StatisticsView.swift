@@ -52,11 +52,11 @@ struct StatisticsView: View {
             Section("Achievements") {
                 
                 ForEach(
-                    AchievementManager.archievements(
+                    AchievementManager.achievements(
                         for: playerManager.player
                     )
                 ) { achievement in
-                    
+
                     HStack {
                         
                         Image(
