@@ -10,15 +10,16 @@ MathOperatorGame/
 ├── MathOperatorGame.xcodeproj
 └── MathOperatorGame/
     ├── Models/
-    │   ├── Difficulty.swift
+    │   ├── Achievement.swift
+    |   ├── AchievementManager.swift 
+    |   ├── Difficulty.swift
     │   ├── GameSession.swift
     │   ├── GameState.swift
     │   ├── MathOperation.swift
     │   ├── MathOperationFactory.swift
     │   ├── OperationType.swift
     │   ├── Player.swift
-    │   └── PlayerManager.swift
-    │
+    │   └── PlayerManager.swift    
     ├── ViewModels/
     │   └── GameViewModel.swift
     │
@@ -26,12 +27,12 @@ MathOperatorGame/
     │   ├── WelcomeView.swift
     │   ├── LearningAreasView.swift
     │   ├── StatisticsView.swift
-    |   ├── AchievementRow.swift
-    |   |
+    │   ├── AchievementsView.swift
+    │   ├── AchievementRow.swift
     │   └── Arithmetic/
     │       ├── ArithmeticView.swift
     │       ├── GameView.swift
-    │       └── ResultView.swift    
+    │       └── ResultView.swift
     ├── ContentView.swift
     └── MathOperatorGameApp.swift
 ```
@@ -129,13 +130,16 @@ Implemented:
 * Achievement evaluation system
 * Achievements integrated into the statistics screen
 * Achievement status visualization (locked and unlocked)
+* Reusable AchievementRow SwiftUI component
+* Dedicated AchievementsView screen
+* NavigationStack-based achievements navigation
+* Sample achievement data for SwiftUI previews
 
 ## Planned
 
 * Player progression
-* Statistics and achievements
 * Android version
 
 ## Project Status
 
-Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, persistent player statistics using UserDefaults, a shared player state across the application, a dedicated statistics screen with achievements, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
+Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, persistent player statistics using UserDefaults, a shared player state across the application, a dedicated statistics screen, an achievements screen with reusable SwiftUI components, achievement tracking, and an MVVM architecture separating business logic from the SwiftUI presentation layer.
