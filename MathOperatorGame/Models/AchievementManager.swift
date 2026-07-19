@@ -11,7 +11,7 @@ struct AchievementManager {
                 id: "first_game",
                 title: "First Game",
                 description: "Complete your first game.",
-                progress: 1,
+                progress: min(player.totalGamesPlayed, 1),
                 goal: 1,
                 isUnlocked: player.totalGamesPlayed >= 1
             ),
@@ -20,8 +20,8 @@ struct AchievementManager {
                 id: "math_apprentice",
                 title: "Math Apprentice",
                 description: "Complete 10 games.",
-                progress: 1,
-                goal: 1,
+                progress: min(player.totalGamesPlayed, 10),
+                goal: 10,
                 isUnlocked: player.totalGamesPlayed >= 10
             ),
             
@@ -29,8 +29,8 @@ struct AchievementManager {
                 id: "accurate_player",
                 title: "Accurate Player",
                 description: "Reach 90% overall accuracy.",
-                progress: 1,
-                goal: 1,
+                progress: min(Int(player.globalAccuracy * 100), 90),
+                goal: 90,
                 isUnlocked: player.globalAccuracy >= 0.90
             ),
             
@@ -38,8 +38,8 @@ struct AchievementManager {
                 id: "streak_master",
                 title: "Streak Master",
                 description: "Reach a streak of 20.",
-                progress: 1,
-                goal: 1,
+                progress: min(player.bestStreak, 20),
+                goal: 20,
                 isUnlocked: player.bestStreak >= 20
             ),
             
@@ -47,8 +47,8 @@ struct AchievementManager {
                 id: "arithmetic_expert",
                 title: "Arithmetic Expert",
                 description: "Score 100 points on Easy difficulty.",
-                progress: 1,
-                goal: 1,
+                progress: min(player.bestScoreEasy, 100),
+                goal: 100,
                 isUnlocked: player.bestScoreEasy >= 100)
         ]
     }
