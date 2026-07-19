@@ -29,6 +29,10 @@ struct AchievementRow: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 
+                Text("\(achievement.progress) / \(achievement.goal)")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+
                 ProgressView(
                     value: Double(achievement.progress),
                     total: Double(achievement.goal)

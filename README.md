@@ -139,6 +139,7 @@ Implemented:
 * Achievement progress tracking model
 * Goal-based achievement structure
 * Achievement progress visualization using ProgressView
+* Numerical achievement progress display
 
 ## Planned
 
