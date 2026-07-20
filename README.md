@@ -140,6 +140,8 @@ Implemented:
 * Goal-based achievement structure
 * Achievement progress visualization using ProgressView
 * Numerical achievement progress display
+* Player level system foundation
+* Experience system foundation
 
 ## Planned
 

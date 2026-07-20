@@ -18,6 +18,10 @@ struct Player: Codable {
     
     private(set) var bestStreak = 0
     
+    private(set) var level = 1
+    
+    private(set) var experience = 0
+    
     var globalAccuracy: Double {
         
         guard totalQuestionsAnswered > 0 else {
@@ -29,6 +33,10 @@ struct Player: Codable {
     
     var accuracyPercentage: Int {
         Int(globalAccuracy * 100)
+    }
+    
+    var experienceRequired: Int {
+        level * 100
     }
     
     mutating func register(session: GameSession) {
