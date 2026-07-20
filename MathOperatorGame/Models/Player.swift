@@ -39,44 +39,51 @@ struct Player: Codable {
         level * 100
     }
     
-    mutating func register(session: GameSession) {
-        
+    mutating func register(
+        session: GameSession
+    ) -> Bool {
+
         totalGamesPlayed += 1
-        
+
         totalCorrectAnswers += session.correctAnswers
-        
         totalQuestionsAnswered += session.questionsAnswered
-        
+
         if session.bestStreak > bestStreak {
             bestStreak = session.bestStreak
         }
-        
+
         switch session.difficulty {
-            
+
         case .easy:
             bestScoreEasy = max(bestScoreEasy, session.score)
-            
+
         case .medium:
             bestScoreMedium = max(bestScoreMedium, session.score)
-            
+
         case .advanced:
             bestScoreAdvanced = max(bestScoreAdvanced, session.score)
         }
-        
-        addExperience(amount: session.score)
+
+        return addExperience(
+            amount: session.score
+        )
     }
-    
+
     private mutating func addExperience(
         amount: Int
-    ) {
-        
+    ) -> Bool {
+
+        var didLevelUp = false
+
         experience += amount
-        
+
         while experience >= experienceRequired {
-            
+
             experience -= experienceRequired
-            
             level += 1
+            didLevelUp = true
         }
-    }
-}
+
+        return didLevelUp
+    }       }
+

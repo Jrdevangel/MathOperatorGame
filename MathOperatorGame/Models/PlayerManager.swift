@@ -10,11 +10,14 @@ final class PlayerManager {
         name: "Player"
     )
     
+    var didLevelUp = false
+    
     func register(session: GameSession) {
         
-        player.register(
+        didLevelUp = player.register(
             session: session
         )
+        
         savePlayer()
     }
     
