@@ -13,80 +13,97 @@ struct StatisticsView: View {
                 Text(playerManager.player.name)
             }
             
-            Section("Games") {
+            Section("Progression") {
                 
                 LabeledContent(
-                    "Games Played",
-                    value: "\(playerManager.player.totalGamesPlayed)"
+                    "Level",
+                    value: "\(playerManager.player.level)"
                 )
                 
                 LabeledContent(
-                    "Accuracy",
-                    value: "\(playerManager.player.accuracyPercentage)%"
+                    "Experience",
+                    value: "\(playerManager.player.experience) / \(playerManager.player.experienceRequired)"
                 )
                 
-                LabeledContent(
-                    "Best Streak",
-                    value: "\(playerManager.player.bestStreak)"
-                )
-            }
-            
-            Section("Best Scores") {
-                
-                LabeledContent(
-                    "Easy",
-                    value: "\(playerManager.player.bestScoreEasy)"
-                )
-                
-                LabeledContent(
-                    "Medium",
-                    value: "\(playerManager.player.bestScoreMedium)"
-                )
-                
-                LabeledContent(
-                    "Advanced",
-                    value: "\(playerManager.player.bestScoreAdvanced)"
+                ProgressView(
+                    value: Double(playerManager.player.experience),
+                    total: Double(playerManager.player.experienceRequired)
                 )
             }
+        }
+        
+        Section("Games") {
             
-            Section("Achievements") {
+            LabeledContent(
+                "Games Played",
+                value: "\(playerManager.player.totalGamesPlayed)"
+            )
+            
+            LabeledContent(
+                "Accuracy",
+                value: "\(playerManager.player.accuracyPercentage)%"
+            )
+            
+            LabeledContent(
+                "Best Streak",
+                value: "\(playerManager.player.bestStreak)"
+            )
+        }
+        
+        Section("Best Scores") {
+            
+            LabeledContent(
+                "Easy",
+                value: "\(playerManager.player.bestScoreEasy)"
+            )
+            
+            LabeledContent(
+                "Medium",
+                value: "\(playerManager.player.bestScoreMedium)"
+            )
+            
+            LabeledContent(
+                "Advanced",
+                value: "\(playerManager.player.bestScoreAdvanced)"
+            )
+        }
+        
+        Section("Achievements") {
+            
+            ForEach(
+                AchievementManager.achievements(
+                    for: playerManager.player
+                )
+            ) { achievement in
                 
-                ForEach(
-                    AchievementManager.achievements(
-                        for: playerManager.player
+                HStack {
+                    
+                    Image(
+                        systemName: achievement.isUnlocked
+                        ? "checkmark.seal.fill"
+                        : "lock.fill"
                     )
-                ) { achievement in
-
-                    HStack {
+                    .foregroundStyle(
+                        achievement.isUnlocked
+                        ? .green
+                        : .secondary
+                    )
+                    
+                    VStack(
+                        alignment: .leading,
+                        spacing: 4
+                    ) {
                         
-                        Image(
-                            systemName: achievement.isUnlocked
-                            ? "checkmark.seal.fill"
-                            : "lock.fill"
-                        )
-                        .foregroundStyle(
-                            achievement.isUnlocked
-                            ? .green
-                            : .secondary
-                        )
+                        Text(achievement.title)
+                            .font(.headline)
                         
-                        VStack(
-                            alignment: .leading,
-                            spacing: 4
-                        ) {
-                            
-                            Text(achievement.title)
-                                .font(.headline)
-                            
-                            Text(achievement.description)
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
+                        Text(achievement.description)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
                     }
                 }
             }
         }
-        .navigationTitle("Statistics")
     }
 }
 
