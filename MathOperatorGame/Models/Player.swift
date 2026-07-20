@@ -52,7 +52,7 @@ struct Player: Codable {
         }
         
         switch session.difficulty {
-
+            
         case .easy:
             bestScoreEasy = max(bestScoreEasy, session.score)
             
@@ -61,6 +61,22 @@ struct Player: Codable {
             
         case .advanced:
             bestScoreAdvanced = max(bestScoreAdvanced, session.score)
+        }
+        
+        addExperience(amount: session.score)
+    }
+    
+    private mutating func addExperience(
+        amount: Int
+    ) {
+        
+        experience += amount
+        
+        while experience >= experienceRequired {
+            
+            experience -= experienceRequired
+            
+            level += 1
         }
     }
 }
