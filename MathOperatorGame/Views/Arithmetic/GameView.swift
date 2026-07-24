@@ -35,6 +35,7 @@ struct GameView: View {
             
             ResultView(
                 session: viewModel.session,
+                playerManager: playerManager,
                 onPlayAgain: {
                     viewModel.restartGame()
                 },
@@ -103,8 +104,12 @@ struct GameView: View {
     }
     
     #Preview {
-        GameView(
-            difficulty: .easy,
-            playerManager: PlayerManager()
+        ResultView(
+            session: GameSession(
+                difficulty: .easy
+            ),
+            playerManager: PlayerManager(),
+            onPlayAgain: {},
+            onBackToMenu: {}
         )
     }
