@@ -3,33 +3,33 @@ import Observation
 
 @Observable
 final class PlayerManager {
-    
+
     private let playerKey = "player"
-    
+    private let defaults = UserDefaults.standard
+
     var player = Player(
         name: "Player"
     )
-    
+
     var didLevelUp = false
-    
+
+    init() {
+        loadPlayer()
+    }
+
     func register(session: GameSession) {
-        
+
         didLevelUp = player.register(
             session: session
         )
-        
+
         savePlayer()
     }
-    
-    init() {
-        
-        loadPlayer()
-    }
-    
+
     private func loadPlayer() {
-        
+
         guard
-            let data = UserDefaults.standard.data(
+            let data = defaults.data(
                 forKey: playerKey
             ),
             let player = try? JSONDecoder().decode(
@@ -39,21 +39,21 @@ final class PlayerManager {
         else {
             return
         }
-        
+
         self.player = player
     }
-    
+
     private func savePlayer() {
-        
+
         guard
             let data = try? JSONEncoder().encode(
-            player
-        )
+                player
+            )
         else {
             return
         }
-        
-        UserDefaults.standard.set(
+
+        defaults.set(
             data,
             forKey: playerKey
         )
