@@ -24,7 +24,7 @@ struct ResultView: View {
 
             Text("Difficulty: \(session.difficulty.title)")
 
-            Text("\(session.score) / \(session.maxQuestions)")
+            Text("\(session.score) / \(GameSession.maxQuestions)")
                 .font(.system(size: 48, weight: .bold))
 
             VStack(spacing: 15) {

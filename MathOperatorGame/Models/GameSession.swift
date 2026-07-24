@@ -1,9 +1,9 @@
 import Foundation
 
-struct GameSession {
+struct GameSession: Codable {
     
     let difficulty: Difficulty
-    let maxQuestions = 10
+    static let maxQuestions = 10
     
     private(set) var score = 0
     private(set) var questionsAnswered = 0
@@ -43,6 +43,6 @@ struct GameSession {
     }
     
     var isFinished: Bool {
-        questionsAnswered >= maxQuestions
+        questionsAnswered >= Self.maxQuestions
     }
 }
