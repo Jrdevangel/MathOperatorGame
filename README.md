@@ -153,6 +153,8 @@ Implemented:
 * Persistent game history management
 * Automatic game history loading
 * Automatic game history saving
+* Automatic game session registration after completed games
+* Shared GameHistoryManager integration
 
 ## Planned
 

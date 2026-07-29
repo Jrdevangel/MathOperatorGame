@@ -5,9 +5,9 @@ class GameViewModel {
     
     let difficulty: Difficulty
     let playerManager: PlayerManager
-
-    var session: GameSession
+    let gameHistoryManager: GameHistoryManager
     
+    var session: GameSession
     var operation: MathOperation
     
     var state: GameState = .playing
@@ -17,11 +17,13 @@ class GameViewModel {
     
     init(
         difficulty: Difficulty,
-        playerManager: PlayerManager
+        playerManager: PlayerManager,
+        gameHistoryManager: GameHistoryManager
     ) {
         
         self.difficulty = difficulty
         self.playerManager = playerManager
+        self.gameHistoryManager = gameHistoryManager
         
         self.session = GameSession(
             difficulty: difficulty
@@ -35,7 +37,6 @@ class GameViewModel {
     func checkAnswer() {
         
         guard let userAnswer = Int(answer) else {
-            
             feedback = "Please enter a valid number."
             isCorrect = false
             return
@@ -51,6 +52,10 @@ class GameViewModel {
             if session.isFinished {
                 
                 playerManager.register(
+                    session: session
+                )
+                
+                gameHistoryManager.register(
                     session: session
                 )
                 
@@ -79,11 +84,11 @@ class GameViewModel {
         )
     }
     
-        func restartGame() {
-            
-            session = GameSession(
-                difficulty: difficulty
-            )
+    func restartGame() {
+        
+        session = GameSession(
+            difficulty: difficulty
+        )
         
         operation = MathOperationFactory.generate(
             score: difficulty.initialScore
@@ -95,20 +100,20 @@ class GameViewModel {
         feedback = ""
         isCorrect = false
     }
-
+    
     var symbol: String {
-
+        
         switch operation.operationType {
-
+            
         case .addition:
             return "+"
-
+            
         case .subtraction:
             return "-"
-
+            
         case .multiplication:
             return "×"
-
+            
         case .division:
             return "÷"
         }

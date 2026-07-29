@@ -4,6 +4,8 @@ struct ArithmeticView: View {
     
     let playerManager: PlayerManager
     
+    let gameHistoryManager: GameHistoryManager
+    
     var body: some View {
 
         VStack(spacing: 25) {
@@ -21,7 +23,8 @@ struct ArithmeticView: View {
             NavigationLink(
                 destination: GameView(
                     difficulty: .easy,
-                    playerManager: playerManager
+                    playerManager: playerManager,
+                    gameHistoryManager: gameHistoryManager
                 )
             ) {
                 Text("Easy")
@@ -32,9 +35,10 @@ struct ArithmeticView: View {
             NavigationLink(
                 destination: GameView(
                     difficulty: .medium,
-                    playerManager: playerManager
-                    )
-                ) {
+                    playerManager: playerManager,
+                    gameHistoryManager: gameHistoryManager
+                )
+            ) {
                 Text("Medium")
                     .frame(maxWidth: .infinity)
             }
@@ -43,7 +47,8 @@ struct ArithmeticView: View {
             NavigationLink(
                 destination: GameView(
                     difficulty: .advanced,
-                    playerManager: playerManager
+                    playerManager: playerManager,
+                    gameHistoryManager: gameHistoryManager
                 )
             ) {
                 Text("Advanced")
@@ -62,7 +67,8 @@ struct ArithmeticView: View {
 #Preview {
     NavigationStack {
         ArithmeticView(
-            playerManager: PlayerManager()
+            playerManager: PlayerManager(),
+            gameHistoryManager: GameHistoryManager()
         )
     }
 }

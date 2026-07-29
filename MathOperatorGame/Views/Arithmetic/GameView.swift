@@ -4,20 +4,24 @@ struct GameView: View {
     
     @State private var viewModel: GameViewModel
     let playerManager: PlayerManager
+    let gameHistoryManager: GameHistoryManager
     
     @Environment(\.dismiss) private var dismiss
     
     init(
         difficulty: Difficulty,
-        playerManager: PlayerManager
+        playerManager: PlayerManager,
+        gameHistoryManager: GameHistoryManager
     ) {
         
         self.playerManager = playerManager
+        self.gameHistoryManager = gameHistoryManager
         
         _viewModel = State(
             initialValue: GameViewModel(
                 difficulty: difficulty,
-                playerManager: playerManager
+                playerManager: playerManager,
+                gameHistoryManager: gameHistoryManager
             )
         )
     }
@@ -102,14 +106,13 @@ struct GameView: View {
             .padding()
         }
     }
-    
-    #Preview {
-        ResultView(
-            session: GameSession(
-                difficulty: .easy
-            ),
+
+#Preview {
+    NavigationStack {
+        GameView(
+            difficulty: .easy,
             playerManager: PlayerManager(),
-            onPlayAgain: {},
-            onBackToMenu: {}
+            gameHistoryManager: GameHistoryManager()
         )
     }
+}
