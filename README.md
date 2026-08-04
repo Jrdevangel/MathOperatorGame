@@ -30,6 +30,8 @@ MathOperatorGame/
     │   ├── WelcomeView.swift
     │   ├── LearningAreasView.swift
     │   ├── StatisticsView.swift
+    │   ├── GameHistoryView.swift
+    │   ├── GameHistoryRow.swift
     │   ├── AchievementsView.swift
     │   ├── AchievementRow.swift
     │   └── Arithmetic/
@@ -155,6 +157,8 @@ Implemented:
 * Automatic game history saving
 * Automatic game session registration after completed games
 * Shared GameHistoryManager integration
+* GameHistoryView implemented
+* Reusable GameHistoryRow SwiftUI component
 
 ## Planned
 
