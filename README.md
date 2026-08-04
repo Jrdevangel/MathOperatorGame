@@ -159,6 +159,8 @@ Implemented:
 * Shared GameHistoryManager integration
 * GameHistoryView implemented
 * Reusable GameHistoryRow SwiftUI component
+* Game history integrated into the statistics screen
+* Navigation from StatisticsView to GameHistoryView
 
 ## Planned
 
@@ -166,4 +168,4 @@ Implemented:
 
 ## Project Status
 
-Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, persistent player statistics using UserDefaults, a shared player state across the application, a dedicated statistics screen, an achievements screen with reusable SwiftUI components, achievement tracking, player progression, and an MVVM architecture separating business logic from the SwiftUI presentation layer. The project also includes the foundation for persistent game history through dedicated game session models, preparing the application for advanced statistics, match history, and future cloud synchronization.
+Currently in early development with a complete arithmetic game flow featuring difficulty selection, question generation, answer validation, score tracking, persistent player statistics using UserDefaults, a shared player state across the application, a dedicated statistics screen, an achievements screen with reusable SwiftUI components, and an integrated game history accessible from the statistics screen. The project follows an MVVM architecture separating business logic from the SwiftUI presentation layer and includes persistent game session storage, providing the foundation for advanced statistics, match history, and future cloud synchronization.

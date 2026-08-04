@@ -17,7 +17,8 @@ struct WelcomeView: View {
                     
                     NavigationLink(
                         destination: StatisticsView(
-                            playerManager: playerManager
+                            playerManager: playerManager,
+                            gameHistoryManager: gameHistoryManager
                         )
                     ) {
                         Image(systemName: "chart.bar.fill")

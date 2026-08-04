@@ -3,6 +3,7 @@ import SwiftUI
 struct StatisticsView: View {
     
     let playerManager: PlayerManager
+    let gameHistoryManager: GameHistoryManager
     
     var body: some View {
         
@@ -67,6 +68,21 @@ struct StatisticsView: View {
                 )
             }
             
+            Section("History") {
+
+                NavigationLink(
+                    destination: GameHistoryView(
+                        gameHistoryManager: gameHistoryManager
+                    )
+                ) {
+
+                    Label(
+                        "Game History",
+                        systemImage: "clock.arrow.circlepath"
+                    )
+                }
+            }
+            
             Section("Achievements") {
                 
                 ForEach(
@@ -82,5 +98,15 @@ struct StatisticsView: View {
             }
         }
         .navigationTitle("Statistics")
+    }
+
+}
+
+#Preview {
+    NavigationStack {
+        StatisticsView(
+            playerManager: PlayerManager(),
+            gameHistoryManager: GameHistoryManager()
+        )
     }
 }
